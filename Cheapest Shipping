@@ -1,0 +1,70 @@
+
+# In this project, I'll build a program that will take the weight of a package and determine the cheapest way to ship that package using Sal’s Shippers.
+note ='Note: Ground Shipping Premium has a Flat charge: $125.00, but you are not charged for weight.'
+weight_of_package = 25
+flat_charge = 20.00
+# price per pound
+price_pp = ''
+# premium price is for drone shipping
+flat_charge_prem = 125.00
+price_pp_prem = ''
+drone_price = ''
+total = ''
+if weight_of_package <= 2:
+  price_pp = 1.50 * weight_of_package + flat_charge
+  price_pp_prem = 0 * weight_of_package + flat_charge_prem
+  drone_price = 4.50 * weight_of_package 
+  if price_pp < price_pp_prem and price_pp < drone_price:
+    total = price_pp
+    print('Ground Shipping:', '$',total)
+  elif drone_price < price_pp and drone_price < price_pp_prem:
+    total = drone_price
+    print('Drone Shipping:', '$',total)
+  else:
+    total = price_pp_prem
+    print('Premium Ground Shipping:', '$',total)
+elif weight_of_package >= 2 or weight_of_package <= 6:
+  price_pp = 3.00 * weight_of_package + flat_charge
+  price_pp_prem = 0 * weight_of_package + flat_charge_prem
+  drone_price = 9.00 * weight_of_package 
+  if price_pp < price_pp_prem and price_pp < drone_price:
+    total = price_pp
+    print('Ground Shipping:', '$',total)
+  elif drone_price < price_pp and drone_price < price_pp_prem:
+    total = drone_price
+    print('Drone Shipping:', '$',total)
+  else:
+    total = price_pp_prem
+    print('Premium Ground Shipping:', '$',total)
+elif weight_of_package <= 10 or weight_of_package >= 6:
+  price_pp = 4.00 * weight_of_package + flat_charge
+  price_pp_prem = 0 * weight_of_package + flat_charge_prem
+  drone_price = 12.00 * weight_of_package
+  if price_pp < price_pp_prem and price_pp < drone_price:
+    total = price_pp
+    print('Ground Shipping:', '$',total)
+  elif drone_price < price_pp and drone_price < price_pp_prem:
+    total = drone_price
+    print('Drone Shipping:', '$',total)
+  else:
+    total = price_pp_prem
+    print('Premium Ground Shipping:', '$',total)
+elif weight_of_package > 10:
+  price_pp = 4.75 * weight_of_package + flat_charge
+  price_pp_prem = 0 * weight_of_package + flat_charge_prem
+  drone_price = 14.25 * weight_of_package
+  if price_pp < price_pp_prem and price_pp < drone_price:
+    total = price_pp
+    print('Ground Shipping:', '$',total)
+  elif drone_price < price_pp and drone_price < price_pp_prem:
+    total = drone_price
+    print('Drone Shipping:', '$',total)
+  else:
+    total = price_pp_prem
+    print('Premium Ground Shipping:', '$',total)
+else:
+  weight_of_package = ''
+  print('Please Enter Weight')
+print('\n')
+print(note)
+
